@@ -54,4 +54,12 @@ public class Util {
         System.out.println("Widths: "+Arrays.toString(boxMaxsWidth)+" Lenght: "+Arrays.toString(boxMaxsLenght));
         return returnData;
     }
+
+    public static double [] getGroup(int boxMaxData, double boxData){
+        double [] group = new double[boxMaxData];
+        for (int i=0; i<boxMaxData; i++){
+            group[i] = i*boxData    ;
+        }
+        return group;
+    }
 }

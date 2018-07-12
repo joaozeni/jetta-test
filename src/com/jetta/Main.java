@@ -1,5 +1,6 @@
 package com.jetta;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -32,6 +33,19 @@ public class Main {
                 break;
             case 2:
                 Util.getBoxMax(boxArray, container);
+                break;
+            case 4:
+                int[][] boxesMax = Util.getBoxMax(boxArray, container);
+                int[] maxWidht = boxesMax[0];
+                int[] maxLenght = boxesMax[1];
+                double[][] widhtGroups = new double[maxWidht.length][];
+                double[][] lenghtGroups = new double[maxLenght.length][];
+                for (int i=0;i<maxLenght.length;i++){
+                    widhtGroups[i] = Util.getGroup(maxWidht[i], boxArray[i].width);
+                    System.out.println("Widths Group"+(i+1)+": "+Arrays.toString(widhtGroups[i]));
+                    lenghtGroups[i] = Util.getGroup(maxLenght[i], boxArray[i].lenght);
+                    System.out.println("Lenght Group"+(i+1)+": "+Arrays.toString(lenghtGroups[i]));
+                }
                 break;
         }
     }
